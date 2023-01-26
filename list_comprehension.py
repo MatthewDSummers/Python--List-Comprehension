@@ -7,12 +7,16 @@ print(count_by_twos(30))
 def product_pairs_divisible_by_5(list1, list2):
     # Finding every pair of integers from list1 and list2 whose product is divisible by 5;
     # if no pairs, return "None Found"
+
+    # NOT USING LIST COMPREHENSION
     result1 = []
     for x in list1:
         for y in list2:
             if (x * y) % 5 == 0:
                 result1.append((x, y))
     print("None Found" if len(result1)==0 else result1, "Not using list comprehension")
+
+    # USING LIST COMPREHENSION
 
     result2 = [ (x, y) for x in list1 for y in list2 if (x * y) % 5 == 0 ]
     print("None Found" if len(result2)==0 else result2, "Using list comprehension")
